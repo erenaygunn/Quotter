@@ -26,6 +26,7 @@ export default {
         justify-content: center;
         align-items: center;
         margin-top: 100px;
+        text-align: center;
     }
 
     header h1 {
@@ -74,5 +75,53 @@ export default {
     header button:hover .icon {
         opacity: 100%;
         left: 190px;
+    }
+
+    @media screen and (max-width: 660px) {
+        header {
+            margin: 80px 20px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+        }
+
+        header h5 {
+            font-size: 1.5rem;
+        }
+
+        header button {
+            width: 250px;
+        }
+
+        header button .icon {
+        opacity: 100%;
+        left: 190px;
+    }
+    }
+
+    @media screen and (max-width: 380px) {
+        header {
+            margin: 50px 20px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+        }
+
+        header h5 {
+            font-size: 1rem;
+        }
+
+        header button, header button:hover {
+            width: 170px;
+            font-size: 1rem;
+            white-space: nowrap;
+            margin-top: 15px;
+        }
+
+        header button .icon, header button:hover .icon {
+        left: 125px;
+    }
     }
 </style>
