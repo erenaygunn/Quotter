@@ -17,8 +17,7 @@ export default {
 </script>
 
 <style scoped>
-    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;700&display=swap');
+    
 
     header {
         display: flex;
@@ -79,7 +78,7 @@ export default {
 
     @media screen and (max-width: 660px) {
         header {
-            margin: 80px 20px;
+            margin: 80px 20px 0;
         }
 
         header h1 {
@@ -102,7 +101,7 @@ export default {
 
     @media screen and (max-width: 380px) {
         header {
-            margin: 50px 20px;
+            margin: 50px 20px 0;
         }
 
         header h1 {
@@ -114,7 +113,7 @@ export default {
         }
 
         header button, header button:hover {
-            width: 170px;
+            width: 180px;
             font-size: 1rem;
             white-space: nowrap;
             margin-top: 15px;
