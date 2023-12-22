@@ -3,14 +3,20 @@
       <p class="quote-text">{{ quote.text }}</p>
       <p class="quote-author">- {{ quote.author }}</p>
       <div class="quote-metadata">
-        <span class="quote-likes">Likes: {{ quote.likes }}</span>
-        <span class="uploader">By {{ quote.uploader }}</span>
+        <span class="quote-likes"><Icon icon="iconamoon:like" class="like"/> {{ quote.likes }}</span>
+        <span class="uploader">{{ quote.date }} ~ {{ quote.uploader }}</span>
+        
       </div>
     </div>
   </template>
   
-  <script>
+<script>
+  import { Icon } from '@iconify/vue';
+
   export default {
+    components: {
+		Icon,
+	  },
     props: {
       quote: {
         type: Object,
@@ -18,14 +24,14 @@
       }
     }
   };
-  </script>
+</script>
   
-  <style scoped>
+<style scoped>
   .quote {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    background-color: #394867;
+    background-color: #212A3E;
     border-radius: 30px;
     margin: 30px;
   }
@@ -49,6 +55,14 @@
     justify-content: space-between;
     color: #9BA4B5;
     font-family: 'Ubuntu', sans-serif;
+  }
+
+  .quote-likes {
+    display: flex;
+    align-items: center;
+  }
+  .quote-likes .like {
+    padding: 2px 3px 0 0;
   }
 
   @media screen and (max-width: 380px) {
