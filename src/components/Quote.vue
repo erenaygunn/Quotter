@@ -3,7 +3,9 @@
       <p class="quote-text">{{ quote.text }}</p>
       <p class="quote-author">- {{ quote.author }}</p>
       <div class="quote-metadata">
-        <span class="quote-likes"><Icon icon="iconamoon:like" class="like"/> {{ quote.likes }}</span>
+        <span class="quote-likes"><button>
+          <Icon icon="iconamoon:like" class="like"/>
+        </button> {{ quote.likes }}</span>
         <span class="uploader"> {{ quote.uploader }} ~ {{ quote.date }}</span>
         
       </div>
@@ -66,8 +68,17 @@
     align-items: center;
     padding-right: 5px;
   }
-  .quote-likes .like {
-    padding: 2px 3px 0 0;
+  .quote-likes button {
+    padding: 6px 3px 0 0;
+    background: none;
+    border: none;
+    color: #9BA4B5;
+    font-size: 1.2rem;
+  }
+
+  .quote-likes button:hover {
+    cursor: pointer;
+    color: #F1F6F9;
   }
 
   @media screen and (max-width: 425px) {
@@ -77,6 +88,10 @@
 
     .quote-metadata {
       flex-wrap: wrap;
+    }
+
+    .quote-likes button {
+      font-size: 1rem;
     }
   }
   
