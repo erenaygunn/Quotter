@@ -1,9 +1,11 @@
 <script setup>
-    import Header from './components/Header.vue';
+    import Header from './components/Header.vue'
     import Quotes from './components/Quotes.vue';
+    import Background from './components/Background.vue';
 </script>
 
 <template>
+    <Background></Background>
     <Header></Header>
     <Quotes></Quotes>
 </template>
@@ -18,7 +20,11 @@
         box-sizing: border-box;
     }
 
-    body {
-        background-color: #F1F6F9;
+
+    html, body {
+        height: 100%;
+    }
+    body{
+    background-color: #F1F6F9;
     }
 </style>
