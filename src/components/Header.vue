@@ -99,7 +99,7 @@ export default {
     }
     }
 
-    @media screen and (max-width: 380px) {
+    @media screen and (max-width: 425px) {
         header {
             margin: 50px 20px 0;
         }
