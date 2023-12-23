@@ -17,8 +17,6 @@ export default {
 </script>
 
 <style scoped>
-    
-
     header {
         display: flex;
         flex-direction: column;
@@ -69,6 +67,7 @@ export default {
         margin-top: 2px;
         transition: all 0.3s;
         left: 0;
+        font-size: 2rem;
     }
 
     header button:hover .icon {
@@ -121,6 +120,10 @@ export default {
 
         header button .icon, header button:hover .icon {
         left: 125px;
-    }
+        }
+
+        header button .icon {
+            font-size: 1.5rem;
+        }
     }
 </style>
