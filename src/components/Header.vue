@@ -22,7 +22,7 @@ export default {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 50px;
+        padding-top: 50px;
         text-align: center;
     }
 
