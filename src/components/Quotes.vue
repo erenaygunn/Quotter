@@ -57,16 +57,18 @@
 .quotes {
   display: flex;
   padding: 50px 20px 45px 20px;
-  margin-top: 50px;
+  margin: 50px 40px;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  background-color: #394867;
+  background-color: #9BA4B5;
+  border-radius: 40px;
 }
 
 @media screen and (max-width: 425px) {
   .quotes {
-    padding: 30px 20px;
+    padding: 25px 15px;
+    margin: 25px 20px;
   }
 }
 
