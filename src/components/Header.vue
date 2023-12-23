@@ -56,7 +56,6 @@ export default {
     }
     header button:hover {
         cursor: pointer;
-        opacity: 90%;
         width: 250px
     }
 
