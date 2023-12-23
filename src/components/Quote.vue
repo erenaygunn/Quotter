@@ -4,7 +4,7 @@
       <p class="quote-author">- {{ quote.author }}</p>
       <div class="quote-metadata">
         <span class="quote-likes"><Icon icon="iconamoon:like" class="like"/> {{ quote.likes }}</span>
-        <span class="uploader">{{ quote.date }} ~ {{ quote.uploader }}</span>
+        <span class="uploader"> {{ quote.uploader }} ~ {{ quote.date }}</span>
         
       </div>
     </div>
@@ -30,10 +30,12 @@
   .quote {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    justify-content: space-around;
+    padding: 30px;
     background-color: #212A3E;
     border-radius: 30px;
-    margin: 30px;
+    margin: 0 20px 20px 20px;
+    max-width: 500px;
   }
   
   .quote-text {
@@ -52,22 +54,29 @@
   
   .quote-metadata {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     color: #9BA4B5;
     font-family: 'Ubuntu', sans-serif;
+    white-space: nowrap;
   }
 
   .quote-likes {
     display: flex;
     align-items: center;
+    padding-right: 5px;
   }
   .quote-likes .like {
     padding: 2px 3px 0 0;
   }
 
-  @media screen and (max-width: 380px) {
+  @media screen and (max-width: 425px) {
     .quote-text, .quote-author, .quote-metadata {
         font-size: 0.8rem;
+    }
+
+    .quote-metadata {
+      flex-wrap: wrap;
     }
   }
   
