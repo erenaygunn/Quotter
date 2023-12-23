@@ -56,10 +56,12 @@
 <style scoped>
 .quotes {
   display: flex;
-  padding: 50px 20px;
+  padding: 50px 20px 45px 20px;
+  margin-top: 50px;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  background-color: #394867;
 }
 
 @media screen and (max-width: 425px) {
