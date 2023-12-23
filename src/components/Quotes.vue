@@ -61,7 +61,6 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  background-color: #9BA4B5;
   border-radius: 40px;
 }
 

@@ -36,7 +36,6 @@ export default {
 .stylebullet {
     position: absolute;
     overflow: hidden;
-    background: #212A3E;
     border-radius: 50%;
     height: 30px;
     width: 30px;
@@ -56,7 +55,7 @@ export default {
     margin-bottom: -60px;
     margin-left: 900px;
     scale: 1.2;
-    animation-delay: 10000ms;
+    animation-delay: 9000ms;
 }
 
 .bullet3 {
@@ -77,7 +76,7 @@ export default {
     margin-bottom: -50px;
     margin-left: 1200px;
     scale: 1;
-    animation-delay: 8000ms;
+    animation-delay: 5000ms;
 }
 
 .bullet6 {
@@ -91,19 +90,19 @@ export default {
     margin-bottom: -25px;
     margin-left: 1500px;
     scale: .9;
-    animation-delay: 11000ms;
+    animation-delay: 10000ms;
 }
 
 .bullet8 {
     margin-bottom: 100px;
-    margin-left: 0px;
+    margin-left: 1600px;
     scale: 1.1;
     animation-delay: 0ms;
 }
 
 .bullet9 {
     margin-bottom: 30px;
-    margin-left: 100px;
+    margin-left: 1700px;
     scale: 1.5;
     animation-delay: 3000ms;
 }
