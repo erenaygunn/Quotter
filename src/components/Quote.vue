@@ -82,6 +82,9 @@
   }
 
   @media screen and (max-width: 425px) {
+    .quote {
+      margin: 0 10px 10px 10px;
+    }
     .quote-text, .quote-author, .quote-metadata {
         font-size: 0.8rem;
     }
