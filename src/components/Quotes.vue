@@ -1,7 +1,10 @@
 <template>
     <div class="container">
       <div class="search-and-sort">
-        <input v-model="searchQuery" type="text" placeholder="Search..." />
+        <div class="search-bar">
+          <input v-model="searchQuery" type="text" placeholder="Search..." />
+          <Icon icon="ri:search-line" />
+        </div>
         <select v-model="sortOption">
           <option value="date">Sort by Date</option>
           <option value="likes">Sort by Likes</option>
@@ -9,17 +12,19 @@
         </select>
       </div>
       <div class="quotes">
-        <Quote v-for="quote in quotes" :key="quote.id" :quote="quote" />
+        <Quote v-for="quote in filteredQuotes" :key="quote.id" :quote="quote" />
       </div>
     </div>
 </template>
   
   <script>
   import Quote from './Quote.vue';
+  import { Icon } from '@iconify/vue';
   
   export default {
     components: {
-      Quote
+      Quote,
+      Icon
     },
     
     data() {
@@ -115,6 +120,20 @@
   align-items: center;
   justify-content: center;
   border-radius: 40px;
+}
+
+.search-and-sort {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.search-and-sort .searchbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-and-sort input {
 }
 
 
