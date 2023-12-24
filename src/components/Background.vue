@@ -116,7 +116,7 @@ export default {
 
 .bullet11 {
     margin-bottom: 40px;
-    margin-left: 300px;
+    margin-left: 120px;
     scale: .9;
     animation-delay: 4000ms;
 }
