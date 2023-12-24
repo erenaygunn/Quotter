@@ -193,20 +193,20 @@
   background-color: #9BA4B5;
 }
 
-
-
 .sort-options {
+  color: #212A3E;
   position: absolute;
   top: 100%;
-  left: 0;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  padding: 10px;
+  right: 0;
+  background-color: #9ba4b5f3;
+  border-radius: 25px;
+  padding: 15px;
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   z-index: 1;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
+  white-space: nowrap;
 }
 
 
