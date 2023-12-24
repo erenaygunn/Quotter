@@ -8,7 +8,7 @@
           <Icon icon="ri:search-line" class="search-icon"/>
         </div>
 
-        <div class="sort-dropdown">
+        <div class="sort-dropdown" :class="{ 'active': showSortDropdown }">
           <button @click="toggleSortDropdown">
             <Icon icon="ic:sharp-sort" />
           </button>
@@ -157,6 +157,7 @@
 .search-and-sort .search-bar .search-icon {
   position: relative;
   right: 30px;
+  color: #394867;
 }
 
 .search-and-sort input {
@@ -167,6 +168,7 @@
   font-family: 'Ubuntu', sans-serif;
   background-color: #fff;
   width: 200px;
+  color: #394867;
 }
 
 .search-and-sort input::placeholder {
@@ -176,6 +178,22 @@
 .sort-dropdown {
   position: relative;
 }
+
+.sort-dropdown button {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  padding: 6px 6px 0;
+  color: #394867;
+  border-radius: 50px;
+  transition: all 0.2s;
+}
+
+.sort-dropdown button:hover, .sort-dropdown.active button {
+  background-color: #9BA4B5;
+}
+
+
 
 .sort-options {
   position: absolute;
