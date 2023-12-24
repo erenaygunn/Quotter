@@ -58,6 +58,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     color: #9BA4B5;
     font-family: 'Ubuntu', sans-serif;
     white-space: nowrap;
