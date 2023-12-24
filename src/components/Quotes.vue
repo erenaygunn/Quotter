@@ -1,15 +1,24 @@
 <template>
     <div class="container">
+
       <div class="search-and-sort">
+
         <div class="search-bar">
           <input v-model="searchQuery" type="text" placeholder="Search..." />
-          <Icon icon="ri:search-line" />
+          <Icon icon="ri:search-line" class="search-icon"/>
         </div>
-        <select v-model="sortOption">
-          <option value="date">Sort by Date</option>
-          <option value="likes">Sort by Likes</option>
-          <option value="length">Sort by Length</option>
-        </select>
+
+        <div class="sort-dropdown">
+          <button @click="toggleSortDropdown">
+            <Icon icon="ic:sharp-sort" />
+          </button>
+          <div v-show="showSortDropdown" class="sort-options">
+            <div @click="changeSortOption('date')">Sort by Date</div>
+            <div @click="changeSortOption('likes')">Sort by Likes</div>
+            <div @click="changeSortOption('length')">Sort by Length</div>
+          </div>
+        </div>
+
       </div>
       <div class="quotes">
         <Quote v-for="quote in filteredQuotes" :key="quote.id" :quote="quote" />
@@ -65,7 +74,8 @@
           // Add more quotes as needed
         ],
         searchQuery: '',
-        sortOption: 'date'
+        sortOption: 'date',
+        showSortDropdown: false
       };
     },
 
@@ -83,6 +93,7 @@
             quote.uploader.toLowerCase().includes(query)
         );
       }
+
       // Sorting logic
       switch (this.sortOption) {
         case 'date':
@@ -99,7 +110,15 @@
       }
 
       return filtered;
-
+    }
+  },
+  methods: {
+    toggleSortDropdown() {
+      this.showSortDropdown = !this.showSortDropdown;
+    },
+    changeSortOption(option) {
+      this.sortOption = option;
+      this.showSortDropdown = false;
     }
   }
   };
@@ -126,14 +145,50 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: 'Ubuntu', sans-serif;
 }
-.search-and-sort .searchbar{
+.search-and-sort .search-bar{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #212A3E;
+}
+
+.search-and-sort .search-bar .search-icon {
+  position: relative;
+  right: 30px;
 }
 
 .search-and-sort input {
+  padding: 10px 20px;
+  border: 1px solid #394867;
+  border-radius: 25px;
+  outline: none;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #fff;
+  width: 200px;
+}
+
+.search-and-sort input::placeholder {
+  color: #9BA4B5;
+}
+
+.sort-dropdown {
+  position: relative;
+}
+
+.sort-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 
