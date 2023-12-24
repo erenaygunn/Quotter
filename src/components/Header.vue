@@ -76,7 +76,7 @@ export default {
 
     @media screen and (max-width: 660px) {
         header {
-            margin: 80px 20px 0;
+            margin: 0px 20px 0;
         }
 
         header h1 {
@@ -99,7 +99,7 @@ export default {
 
     @media screen and (max-width: 425px) {
         header {
-            margin: 50px 20px 0;
+            margin: 0px 20px 0;
         }
 
         header h1 {
