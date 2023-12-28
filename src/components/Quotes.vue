@@ -71,6 +71,14 @@
             uploader: "Eren",
             date: "21.12.2023"
           },
+          {
+          id: 2,
+          text: "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+          author: "Winston S. Churchill",
+          likes: 56,
+          uploader: "Armin",
+          date: "22.12.2023"
+          },
           // Add more quotes as needed
         ],
         searchQuery: '',
@@ -244,6 +252,23 @@
     width: 300px;
     height: 50px;
     font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 1441px) {
+  .search-and-sort input {
+    width: 450px;
+    height: 55px;
+    font-size: 1.2rem;
+  }
+
+  .sort-dropdown button {
+    font-size: 2rem;
+  }
+
+  .search-and-sort .search-bar .search-icon {
+    font-size: 1.5rem;
+    right: 45px;
   }
 }
 
