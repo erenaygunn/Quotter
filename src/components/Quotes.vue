@@ -13,9 +13,9 @@
             <Icon icon="ic:sharp-sort" />
           </button>
           <div v-show="showSortDropdown" class="sort-options">
-            <div @click="changeSortOption('date')">Sort by Date</div>
-            <div @click="changeSortOption('likes')">Sort by Likes</div>
-            <div @click="changeSortOption('length')">Sort by Length</div>
+            <p @click="changeSortOption('date')">Sort by Date</p>
+            <p @click="changeSortOption('likes')">Sort by Likes</p>
+            <p @click="changeSortOption('length')">Sort by Length</p>
           </div>
         </div>
 
@@ -196,13 +196,13 @@
 }
 
 .sort-options {
-  color: #212A3E;
+  color: #394867;
   position: absolute;
   top: 100%;
   right: 0;
   background-color: #fff;
   border-radius: 25px;
-  padding: 15px;
+  padding: 15px 10px;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
@@ -211,6 +211,23 @@
   white-space: nowrap;
 }
 
+.sort-options p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 7px 7px 0 7px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #9BA4B5;
+}
+
+.sort-options p:hover {
+  cursor: pointer;
+}
+
+.sort-options p:last-child {
+  border-bottom: none; /* Remove border for the last item */
+}
 
 @media screen and (max-width: 425px) {
   .quotes {
