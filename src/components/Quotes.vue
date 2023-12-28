@@ -181,16 +181,18 @@
 
 .sort-dropdown button {
   background: transparent;
-  border: none;
+  border: 1px solid transparent;
   font-size: 1.5rem;
   padding: 6px 6px 0;
   color: #394867;
   border-radius: 50px;
-  transition: all 0.2s;
+  transition: all 0.3s;
 }
 
 .sort-dropdown button:hover, .sort-dropdown.active button {
-  background-color: #9BA4B5;
+  background-color: #fff;
+  cursor: pointer;
+  border-color: #394867;
 }
 
 .sort-options {
@@ -198,14 +200,14 @@
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: #9ba4b5f3;
+  background-color: #fff;
   border-radius: 25px;
   padding: 15px;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
   z-index: 1;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   white-space: nowrap;
 }
 
