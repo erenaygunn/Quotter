@@ -239,4 +239,12 @@
   }
 }
 
+@media screen and (min-width: 426px) {
+  .search-and-sort input {
+    width: 300px;
+    height: 50px;
+    font-size: 1rem;
+  }
+}
+
 </style>
