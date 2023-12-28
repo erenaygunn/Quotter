@@ -48,7 +48,7 @@
             date: "21.12.2023"
           },
           {
-            id: 1,
+            id: 3,
             text: "The only limit to our realization of tomorrow will be our doubts of today.",
             author: "Franklin D. Roosevelt",
             likes: 42,
@@ -56,7 +56,7 @@
             date: "21.12.2023"
           },
           {
-            id: 1,
+            id: 4,
             text: "The only limit to our realization of tomorrow will be our doubts of today.The only limit to our realization of tomorrow will be our doubts of today.The only limit to our realization of tomorrow will be our doubts of today.",
             author: "Franklin D. Roosevelt",
             likes: 42,
@@ -64,7 +64,7 @@
             date: "21.12.2023"
           },
           {
-            id: 1,
+            id: 5,
             text: "The only limit to our realization of tomorrow will be our doubts of today.",
             author: "Franklin D. Roosevelt",
             likes: 42,
@@ -79,7 +79,6 @@
           uploader: "Armin",
           date: "22.12.2023"
           },
-          // Add more quotes as needed
         ],
         searchQuery: '',
         sortOption: 'date',
