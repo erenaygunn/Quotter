@@ -1,20 +1,37 @@
 <template>
     <header>
-        <h1>Quotter</h1>
-        <h5>This is a public quote platform where you can post and read quotes.</h5>
-        <button>Write a Quote<Icon icon="jam:write-f" class="icon"/></button>
+      <h1>Quotter</h1>
+      <h5>This is a public quote platform where you can post and read quotes.</h5>
+      <button @click="openModal">Write a Quote<Icon icon="jam:write-f" class="icon" /></button>
+      <quote-modal :is-open="isModalOpen" @close="closeModal"></quote-modal>
     </header>
-</template>
-
-<script>
-import { Icon } from '@iconify/vue';
-
-export default {
-	components: {
-		Icon,
-	},
-};
-</script>
+  </template>
+  
+  <script>
+  import { Icon } from '@iconify/vue';
+  import QuoteModal from './QuoteModal.vue';
+  
+  export default {
+    components: {
+      Icon,
+      QuoteModal,
+    },
+    data() {
+      return {
+        isModalOpen: false,
+      };
+    },
+    methods: {
+      openModal() {
+        this.isModalOpen = true;
+      },
+      closeModal() {
+        this.isModalOpen = false;
+      },
+    },
+  };
+  </script>
+  
 
 <style scoped>
     header {
