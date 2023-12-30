@@ -122,7 +122,7 @@
 
 .quotes {
   display: flex;
-  margin: 30px 40px;
+  margin: 70px 30px 40px;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
