@@ -29,6 +29,8 @@
   <script>
   import Quote from './Quote.vue';
   import { Icon } from '@iconify/vue';
+  import axios from 'axios';
+  
   
   export default {
     components: {
@@ -38,52 +40,35 @@
     
     data() {
       return {
-        quotes: [
-          {
-            id: 1,
-            text: "The only limit to our realization of tomorrow will be our doubts of today.",
-            author: "Franklin D. Roosevelt",
-            likes: 42,
-            uploader: "Eren",
-            date: "21.12.2023"
-          },
-          {
-            id: 3,
-            text: "The only limit to our realization of tomorrow will be our doubts of today.",
-            author: "Franklin D. Roosevelt",
-            likes: 42,
-            uploader: "Eren",
-            date: "21.12.2023"
-          },
-          {
-            id: 4,
-            text: "The only limit to our realization of tomorrow will be our doubts of today.The only limit to our realization of tomorrow will be our doubts of today.The only limit to our realization of tomorrow will be our doubts of today.",
-            author: "Franklin D. Roosevelt",
-            likes: 42,
-            uploader: "Eren",
-            date: "21.12.2023"
-          },
-          {
-            id: 5,
-            text: "The only limit to our realization of tomorrow will be our doubts of today.",
-            author: "Franklin D. Roosevelt",
-            likes: 42,
-            uploader: "Eren",
-            date: "21.12.2023"
-          },
-          {
-          id: 2,
-          text: "Success is not final, failure is not fatal: It is the courage to continue that counts.",
-          author: "Winston S. Churchill",
-          likes: 56,
-          uploader: "Armin",
-          date: "22.12.2023"
-          },
-        ],
+        quotes: [],
         searchQuery: '',
         sortOption: 'date',
-        showSortDropdown: false
+        showSortDropdown: false,
       };
+    },
+
+    async created() {
+    this.quotes = await this.fetchQuotes();
+    },
+
+    methods: {
+      async fetchQuotes() {
+        try {
+          const response = await axios.get('http://localhost:3000/api/quotes');
+          return response.data;
+        } catch (error) {
+          console.error('Error fetching quotes:', error);
+          return []; // Return an empty array in case of an error
+        }
+      },
+      toggleSortDropdown() {
+      this.showSortDropdown = !this.showSortDropdown;
+      },
+      changeSortOption(option) {
+        this.sortOption = option;
+        this.showSortDropdown = false;
+      }
+    
     },
 
     computed: {
@@ -119,16 +104,12 @@
       return filtered;
     }
   },
-  methods: {
-    toggleSortDropdown() {
-      this.showSortDropdown = !this.showSortDropdown;
-    },
-    changeSortOption(option) {
-      this.sortOption = option;
-      this.showSortDropdown = false;
-    }
-  }
+  mounted() {
+    this.fetchQuotes(); 
+  },
+
   };
+  
   </script>
 
 <style scoped>
