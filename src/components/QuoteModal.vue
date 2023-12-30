@@ -35,8 +35,10 @@
           quoteData: {
           quote: '',
           author: '',
+          likes: 0,
           userName: '',
           email: '',
+          date: '',
         },
         quote: '',
         author: '',
@@ -53,13 +55,14 @@
         this.quoteData = {
         quote: this.quote,
         author: this.author,
+        likes: 0,
         userName: this.userName,
         email: this.email,
-        date: "3131",
+        date: "0",
         }
 
         this.$emit('submit-quote', this.quoteData);
-        // Handle quote submission logic here
+        console.log(this.quoteData)
         console.log('Quote:', this.quote);
         console.log('Author:', this.author);
         console.log('User Name:', this.userName);
@@ -68,7 +71,8 @@
         this.clearFields()
         this.clearData
         this.closeModal();
-      },
+        
+        },
       clearData() {
         this.quoteData = {
           quote: '',
