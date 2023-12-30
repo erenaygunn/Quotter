@@ -32,6 +32,12 @@
     props: ['isOpen'],
     data() {
       return {
+          quoteData: {
+          quote: '',
+          author: '',
+          userName: '',
+          email: '',
+        },
         quote: '',
         author: '',
         userName: '',
@@ -41,25 +47,42 @@
     methods: {
       closeModal() {
         this.$emit('close');
-        this.clearFields();
       },
       submitQuote() {
+         // Update quoteData before emitting the event
+        this.quoteData = {
+        quote: this.quote,
+        author: this.author,
+        userName: this.userName,
+        email: this.email,
+        date: "3131",
+        }
+
+        this.$emit('submit-quote', this.quoteData);
         // Handle quote submission logic here
         console.log('Quote:', this.quote);
         console.log('Author:', this.author);
         console.log('User Name:', this.userName);
         console.log('Email:', this.email);
-  
         // Close the modal after submission
+        this.clearFields()
+        this.clearData
         this.closeModal();
       },
+      clearData() {
+        this.quoteData = {
+          quote: '',
+          author: '',
+          userName: '',
+          email: '',
+        };
+      },
       clearFields() {
-        // Clear input fields when the modal is closed
         this.quote = '';
         this.author = '';
         this.userName = '';
         this.email = '';
-      },
+      }
     },
   };
   </script>
