@@ -38,9 +38,15 @@
 
             // Log the response from the server
             console.log('Quote submitted. Server response:', response.data);
-        } catch (error) {
-            console.error('Error submitting quote:', error);
-        }
+        }  catch (error) {
+            // Check if the error is due to reaching the maximum quote limit
+            if (error.response && error.response.status === 400) {
+                // Inform the user about the maximum quote limit
+                window.alert(error.response.data.error);
+            } else {
+                console.error('Error submitting quote:', error);
+            }
+            }
         },
     },
   };
