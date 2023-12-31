@@ -4,7 +4,7 @@
       <div class="search-and-sort">
 
         <div class="search-bar">
-          <input v-model="searchQuery" type="text" placeholder="Search..." />
+          <input v-model="searchQuery" type="text" placeholder="Search..." id="search"/>
           <Icon icon="ri:search-line" class="search-icon"/>
         </div>
 

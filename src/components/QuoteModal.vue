@@ -1,31 +1,32 @@
 <template>
-    <div class="modal-overlay" v-if="isOpen">
-      <div class="modal">
-        <span class="close" @click="closeModal">&times;</span>
-        <form @submit.prevent="submitQuote">
-          <ul>
-            <li>
-              <label for="quote">Quote:</label>
-              <textarea v-model="quote" id="quote" required></textarea>
-            </li>
-            <li>
-              <label for="author">Author:</label>
-              <input v-model="author" type="text" id="author" required>
-            </li>
-            <li>
-              <label for="userName">Your Name (Optional):</label>
-              <input v-model="userName" type="text" id="userName">
-            </li>
-            <li>
-              <label for="email">Email:</label>
-              <input v-model="email" type="email" id="email" required>
-            </li>
-            <button type="submit" class="submit">Publish</button>
-          </ul>
-        </form>
-      </div>
+  <div class="modal-overlay" v-if="isOpen">
+    <div class="modal">
+      <span class="close" @click="closeModal">&times;</span>
+      <form @submit.prevent="submitQuote">
+        <ul>
+          <li>
+            <label for="quote">Quote:</label>
+            <textarea v-model="quote" id="quote" required @input="validateQuote"></textarea>
+            <p class="error-message">{{ quoteError }}</p>
+          </li>
+          <li>
+            <label for="author">Author:</label>
+            <input v-model="author" type="text" id="author" required @input="validateAuthor" />
+          </li>
+          <li>
+            <label for="userName">Your Name (Optional):</label>
+            <input v-model="userName" type="text" id="userName" @input="validateUserName" autocomplete="given-name"/>
+          </li>
+          <li>
+            <label for="email">Email:</label>
+            <input v-model="email" type="email" id="email" required @input="validateEmail" autocomplete="email"/>
+          </li>
+          <button type="submit" class="submit">Publish</button>
+        </ul>
+      </form>
     </div>
-  </template>
+  </div>
+</template>
   
   <script>
   export default {
@@ -44,6 +45,7 @@
         author: '',
         userName: '',
         email: '',
+        quoteError: '',
       };
     },
     methods: {
@@ -51,6 +53,13 @@
         this.$emit('close');
       },
       submitQuote() {
+        if (
+          this.quote.length < 25
+        ) {
+          window.alert("Quote must be at least 25 characters length.")
+          return;
+        }
+        
          // Update quoteData before emitting the event
         this.quoteData = {
         quote: this.quote,
@@ -73,6 +82,11 @@
         this.closeModal();
         
         },
+
+      validateQuote() {
+      this.quoteError = this.quote.length < 25 ? 'Quote must be at least 25 characters.' : '';
+      },
+
       clearData() {
         this.quoteData = {
           quote: '',
@@ -92,6 +106,12 @@
   </script>
   
   <style scoped>
+
+  .error-message {
+    color: red;
+    margin-top: 5px;
+    font-size: 12px;
+  }
   .modal-overlay {
     position: fixed;
     z-index: 100;
