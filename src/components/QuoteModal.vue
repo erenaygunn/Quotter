@@ -11,15 +11,15 @@
           </li>
           <li>
             <label for="author">Author:</label>
-            <input v-model="author" type="text" id="author" required @input="validateAuthor" />
+            <input v-model="author" type="text" id="author" required/>
           </li>
           <li>
             <label for="userName">Your Name (Optional):</label>
-            <input v-model="userName" type="text" id="userName" @input="validateUserName" autocomplete="given-name"/>
+            <input v-model="userName" type="text" id="userName" autocomplete="given-name"/>
           </li>
           <li>
             <label for="email">Email:</label>
-            <input v-model="email" type="email" id="email" required @input="validateEmail" autocomplete="email"/>
+            <input v-model="email" type="email" id="email" required autocomplete="email"/>
           </li>
           <button type="submit" class="submit">Publish</button>
         </ul>
