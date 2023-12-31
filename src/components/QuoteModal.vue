@@ -52,11 +52,23 @@
       closeModal() {
         this.$emit('close');
       },
+
       submitQuote() {
         if (
           this.quote.length < 25
         ) {
           window.alert("Quote must be at least 25 characters length.")
+          return;
+        }
+
+        if (this.author.length > 24) {
+          window.alert('Author name must be 24 characters or less.');
+          return;
+        }
+
+        // Validate Username Length
+        if (this.userName.length > 24) {
+          window.alert('Username must be 24 characters or less.');
           return;
         }
         
