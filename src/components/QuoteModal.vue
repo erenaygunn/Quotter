@@ -97,7 +97,7 @@
           return;
         }
 
-        if(this.checkForCurseWords(this.quote));{
+        if(this.checkForCurseWords(this.quote)){
           return;
         }
         
@@ -112,11 +112,6 @@
         }
 
         this.$emit('submit-quote', this.quoteData);
-        console.log(this.quoteData)
-        console.log('Quote:', this.quote);
-        console.log('Author:', this.author);
-        console.log('User Name:', this.userName);
-        console.log('Email:', this.email);
         // Close the modal after submission
         this.clearFields()
         this.clearData

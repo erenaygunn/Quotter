@@ -31,9 +31,8 @@
       },
       async handleQuoteSubmission(quoteData) {
         try {
-            console.log(quoteData)
             // Make an HTTP POST request to save the quote to the database
-            const response = await axios.post('http://localhost:3000/api/quotes', quoteData);
+            const response = await axios.post('https://quotter-backend.onrender.com/api/quotes', quoteData);
             location.reload();
 
             // Log the response from the server

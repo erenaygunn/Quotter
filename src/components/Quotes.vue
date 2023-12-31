@@ -54,7 +54,7 @@
     methods: {
       async fetchQuotes() {
         try {
-          const response = await axios.get('http://localhost:3000/api/quotes');
+          const response = await axios.get('https://quotter-backend.onrender.com/api/quotes');
           return response.data;
         } catch (error) {
           console.error('Error fetching quotes:', error);
