@@ -53,6 +53,31 @@
         this.$emit('close');
       },
 
+      checkForCurseWords(quote) {
+        const curseWordsFile = './../curse-words.txt';
+
+        // Fetch the curse words from the file
+        fetch(curseWordsFile)
+          .then(response => response.text())
+          .then(data => {
+            const curseWords = data.split('\n').map(word => word.trim());
+
+            // Check if the quote contains any curse words
+            const containsCurseWord = curseWords.some(word => quote.toLowerCase().includes(word.toLowerCase()));
+
+            if (containsCurseWord) {
+              window.alert('Your quote contains inappropriate language. Please edit and try again.');
+              // Clear the quote field or take appropriate action
+              this.quote = '';
+              return true;
+            }
+          })
+          .catch(error => {
+            console.error('Error loading curse words:', error);
+          });
+      },
+
+
       submitQuote() {
         if (
           this.quote.length < 25
@@ -69,6 +94,10 @@
         // Validate Username Length
         if (this.userName.length > 24) {
           window.alert('Username must be 24 characters or less.');
+          return;
+        }
+
+        if(this.checkForCurseWords(this.quote));{
           return;
         }
         
