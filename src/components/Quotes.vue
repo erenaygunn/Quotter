@@ -95,7 +95,7 @@
           filtered.sort((a, b) => b.likes - a.likes);
           break;
         case 'length':
-          filtered.sort((a, b) => a.text.length - b.text.length);
+          filtered.sort((a, b) => a.quote.length - b.quote.length);
           break;
         default:
           break;
