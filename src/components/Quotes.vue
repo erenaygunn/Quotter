@@ -80,7 +80,7 @@
         const query = this.searchQuery.toLowerCase();
         filtered = filtered.filter(
           (quote) =>
-            quote.text.toLowerCase().includes(query) ||
+            quote.quote.toLowerCase().includes(query) ||
             quote.author.toLowerCase().includes(query) ||
             quote.uploader.toLowerCase().includes(query)
         );

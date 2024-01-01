@@ -54,7 +54,7 @@
       },
 
       checkForCurseWords(quote) {
-        const curseWordsFile = './../curse-words.txt';
+        const curseWordsFile = '../curse-words.txt';
 
         // Fetch the curse words from the file
         fetch(curseWordsFile)
