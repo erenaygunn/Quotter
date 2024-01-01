@@ -40,7 +40,7 @@
     
     data() {
       return {
-        quotes: [this.fetchQuotes()],
+        quotes: [],
         searchQuery: '',
         sortOption: 'date',
         showSortDropdown: false,
@@ -72,19 +72,23 @@
     },
 
     computed: {
-    filteredQuotes() {
-      let filtered = [...this.quotes];
+      filteredQuotes() {
+        let filtered = [...this.quotes];
 
-      // Search logic
-      if (this.searchQuery.trim() !== '') {
-        const query = this.searchQuery.toLowerCase();
-        filtered = filtered.filter(
-          (quote) =>
-            quote.quote.toLowerCase().includes(query) ||
-            quote.author.toLowerCase().includes(query) ||
-            quote.uploader.toLowerCase().includes(query)
-        );
-      }
+        // Search logic
+        if (this.searchQuery.trim() !== '') {
+          const query = this.searchQuery.toLowerCase();
+          filtered = filtered.filter((quote) => {
+            // Check if the properties exist before using toLowerCase()
+            const quoteText = quote.quote ? quote.quote.toLowerCase() : '';
+            const author = quote.author ? quote.author.toLowerCase() : '';
+            const uploader = quote.uploader ? quote.uploader.toLowerCase() : '';
+
+            return (
+              quoteText.includes(query) || author.includes(query) || uploader.includes(query)
+            );
+          });
+        }
 
       // Sorting logic
       switch (this.sortOption) {
