@@ -128,7 +128,6 @@
   display: flex;
   margin: 70px 30px 40px;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
   border-radius: 40px;
 }
