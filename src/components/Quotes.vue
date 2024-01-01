@@ -93,7 +93,7 @@
       // Sorting logic
       switch (this.sortOption) {
         case 'date':
-          filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
+          filtered.sort((a, b) => (a.date) - (b.date));
           break;
         case 'likes':
           filtered.sort((a, b) => b.likes - a.likes);
