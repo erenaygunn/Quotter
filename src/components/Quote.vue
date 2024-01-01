@@ -65,7 +65,7 @@
 
         try {
           // Make an HTTP POST request to like the quote with the user's email
-          const response = await axios.post('https://quotter-backend.onrender.com/quotes/like', {
+          const response = await axios.post('https://quotter-backend.onrender.com/api/quotes/like', {
             quoteId: this.quote._id,
             userEmail: this.userEmail,
           });
