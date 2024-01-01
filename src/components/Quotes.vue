@@ -40,7 +40,7 @@
     
     data() {
       return {
-        quotes: [],
+        quotes: [fetchQuotes()],
         searchQuery: '',
         sortOption: 'date',
         showSortDropdown: false,
