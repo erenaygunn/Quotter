@@ -14,7 +14,7 @@
       <div class="email-form">
         <span class="close" @click="showEmailModal = false">&times;</span>
         <label for="email">Enter your email to like the quote</label>
-        <input v-model="userEmail" type="email" placeholder="Enter your email" @input="validateEmail" autocomplete="email"/>
+        <input v-model="userEmail" type="email" id="email" placeholder="Enter your email" @input="validateEmail" autocomplete="email"/>
         <p v-if="!isValidEmail" class="error-message">Please enter a valid email address.</p>
         <button @click="submitEmail" >Submit</button>
       </div>
