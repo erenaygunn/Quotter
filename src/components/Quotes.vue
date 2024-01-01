@@ -82,7 +82,7 @@
             // Check if the properties exist before using toLowerCase()
             const quoteText = quote.quote ? quote.quote.toLowerCase() : '';
             const author = quote.author ? quote.author.toLowerCase() : '';
-            const uploader = quote.uploader ? quote.uploader.toLowerCase() : '';
+            const uploader = quote.userName ? quote.userName.toLowerCase() : '';
 
             return (
               quoteText.includes(query) || author.includes(query) || uploader.includes(query)
