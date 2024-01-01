@@ -71,10 +71,6 @@
           window.alert('Username must be 24 characters or less.');
           return;
         }
-
-        if(this.checkForCurseWords(this.quote)){
-          return;
-        }
         
          // Update quoteData before emitting the event
         this.quoteData = {
