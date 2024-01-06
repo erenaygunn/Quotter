@@ -60,6 +60,12 @@
           window.alert("Quote must be at least 25 characters length.")
           return;
         }
+        if (
+          this.quote.length > 300
+        ) {
+          window.alert("Quote must be at most 300 characters length.")
+          return;
+        }
 
         if (this.author.length > 24) {
           window.alert('Author name must be 24 characters or less.');
