@@ -91,7 +91,7 @@
         },
 
       validateQuote() {
-      this.quoteError = this.quote.length < 25 ? 'Quote must be at least 25 characters.' : '';
+      this.quoteError = (this.quote.length < 25 && this.quote.length > 300) ? 'Quote must be at least 25 characters and maximum 300 characters.' : '';
       },
 
       clearData() {
