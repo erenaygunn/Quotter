@@ -21,6 +21,9 @@
 
       </div>
       <div class="quotes">
+        <div v-if="quotes.length === 0" class="loading-icon">
+          
+        </div>
         <Quote v-for="quote in filteredQuotes" :key="quote.id" :quote="quote" />
       </div>
     </div>
@@ -44,6 +47,7 @@
         searchQuery: '',
         sortOption: 'date',
         showSortDropdown: false,
+        loading: true
       };
     },
 
@@ -55,10 +59,12 @@
       async fetchQuotes() {
         try {
           const response = await axios.get('https://quotter-backend.onrender.com/api/quotes');
-          return response.data;
+          this.quotes = response.data;
         } catch (error) {
           console.error('Error fetching quotes:', error);
-          return []; // Return an empty array in case of an error
+          return [];
+        } finally {
+          this.loading = false; 
         }
       },
       toggleSortDropdown() {
