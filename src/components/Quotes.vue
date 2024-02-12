@@ -22,7 +22,7 @@
       </div>
       <div class="quotes">
         <div v-if="quotes.length === 0" class="loading-icon">
-          
+          <Spinner/>
         </div>
         <Quote v-for="quote in filteredQuotes" :key="quote.id" :quote="quote" />
       </div>
@@ -31,6 +31,7 @@
   
   <script>
   import Quote from './Quote.vue';
+  import Spinner from './Spinner.vue';
   import { Icon } from '@iconify/vue';
   import axios from 'axios';
   
@@ -38,7 +39,8 @@
   export default {
     components: {
       Quote,
-      Icon
+      Icon,
+      Spinner
     },
     
     data() {
@@ -47,7 +49,6 @@
         searchQuery: '',
         sortOption: 'date',
         showSortDropdown: false,
-        loading: true
       };
     },
 
@@ -59,12 +60,10 @@
       async fetchQuotes() {
         try {
           const response = await axios.get('https://quotter-backend.onrender.com/api/quotes');
-          this.quotes = response.data;
+          return response.data;
         } catch (error) {
           console.error('Error fetching quotes:', error);
-          return [];
-        } finally {
-          this.loading = false; 
+          return []; // Return an empty array in case of an error
         }
       },
       toggleSortDropdown() {
